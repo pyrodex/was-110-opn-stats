@@ -7,3 +7,8 @@ Steps:
 * You'll need to restart the configd service (service configd restart)
 * Now you can navigate to the OPNsense UI and go to System->Settings->Cron and add the WAS-110 job via the drop down for the time you prefer.
 
+![alt text](https://github.com/pyrodex/was-110-opn-stats/blob/main/opnsense-cron.png?raw=true)
+
+* Now you can validate the cron is running by monitoring the /var/log/was-110-stats.log file.
+
+Enjoy!

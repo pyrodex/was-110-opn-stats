@@ -15,4 +15,6 @@ Steps:
 
 * Now you can validate the cron is running by monitoring the /var/log/was-110-stats.log file.
 
+There is a provided Grafana dashboard provided and can be loaded.
+
 Enjoy!

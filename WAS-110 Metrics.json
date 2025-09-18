@@ -72,7 +72,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": 0
               }
             ]
           },
@@ -105,7 +106,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.1.1",
       "targets": [
         {
           "datasource": {
@@ -114,7 +115,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "was_110_rx_power_dbm",
+          "expr": "was_110_rx_power_dBm",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
@@ -122,9 +123,26 @@
           "range": true,
           "refId": "A",
           "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "jex97PbMz"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "was_110_tx_power_dBm",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "TX Power (dBm)",
+          "range": true,
+          "refId": "B",
+          "useBackend": false
         }
       ],
-      "title": "pon0 RX dBm",
+      "title": "pon0 RX/TX dBm",
       "type": "timeseries"
     },
     {
@@ -175,7 +193,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": 0
               },
               {
                 "color": "red",
@@ -212,7 +231,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.1.1",
       "targets": [
         {
           "datasource": {
@@ -221,18 +240,18 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "was_110_tx_power_dbm",
+          "expr": "was_110_ploam_state",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
           "instant": false,
-          "legendFormat": "TX Power (dBm)",
+          "legendFormat": "PLOAM State",
           "range": true,
           "refId": "B",
           "useBackend": false
         }
       ],
-      "title": "pon0 TX dBm",
+      "title": "pon0 PLOAM State",
       "type": "timeseries"
     },
     {
@@ -283,7 +302,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": 0
               },
               {
                 "color": "red",
@@ -320,7 +340,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.1.1",
       "targets": [
         {
           "datasource": {
@@ -329,13 +349,47 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "was_110_temperature_in_c",
+          "expr": "was_110_cpu1_tempC",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
-          "legendFormat": "Temperature",
+          "legendFormat": "CPU1",
           "range": true,
           "refId": "A",
+          "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "jex97PbMz"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "was_110_cpu2_tempC",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "CPU2",
+          "range": true,
+          "refId": "B",
+          "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "jex97PbMz"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "was_110_optic_tempC",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "OPTIC",
+          "range": true,
+          "refId": "C",
           "useBackend": false
         }
       ],
@@ -390,7 +444,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": 0
               },
               {
                 "color": "red",
@@ -427,7 +482,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.1.1",
       "targets": [
         {
           "datasource": {
@@ -436,7 +491,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "was_110_tx_bias_current",
+          "expr": "was_110_tx_bias_mA",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
@@ -448,6 +503,114 @@
       ],
       "title": "pon0 Laser bias current",
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "jex97PbMz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "volt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 6,
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "lastNotNull",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "jex97PbMz"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "was_110_module_voltage",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "Voltage",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "pon0 Module Voltage",
+      "type": "timeseries"
     }
   ],
   "preload": false,
@@ -458,12 +621,12 @@
     "list": []
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "WAS-110 Metrics",
   "uid": "cdw0ggkxc7dhcb",
-  "version": 6
+  "version": 15
 }

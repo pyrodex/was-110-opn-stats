@@ -201,8 +201,7 @@
                 "value": 80
               }
             ]
-          },
-          "unit": "dBm"
+          }
         },
         "overrides": []
       },
@@ -621,12 +620,12 @@
     "list": []
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "WAS-110 Metrics",
   "uid": "cdw0ggkxc7dhcb",
-  "version": 15
+  "version": 16
 }
